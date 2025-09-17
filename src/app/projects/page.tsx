@@ -15,10 +15,7 @@ const fadeInUp: Variants = {
   },
 }
 
-const variantsRight = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-}
+
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -49,7 +46,7 @@ export default function ProjectsPage() {
           animate="visible"
           variants={staggerContainer}
         >
-          {PROJECTS.map((project, index) => (
+          {PROJECTS.map((project) => (
             <motion.div key={project.id} variants={fadeInUp}>
               <Link
                 href={`/projects/${project.slug}`}

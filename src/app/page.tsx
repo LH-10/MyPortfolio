@@ -3,11 +3,10 @@ import { motion, Variants } from "framer-motion"
 import Footer from "@/components/Footer"
 import Image from "next/image"
 import Link from "next/link"
-import tsLogo from "@/../public/typescript.svg"
 import { LINKS, PROJECTS } from "@/misc/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faDocker, faGithub, faGolang, faHtml5, faJava } from "@fortawesome/free-brands-svg-icons"
-import { faArrowCircleRight, faCode, faToolbox, faTools } from "@fortawesome/free-solid-svg-icons"
+import { faCss3Alt, faDocker, faGithub, faHtml5, faJava } from "@fortawesome/free-brands-svg-icons"
+import { faCode, faTools } from "@fortawesome/free-solid-svg-icons"
 import { faJs } from "@fortawesome/free-brands-svg-icons/faJs"
 import { faGitAlt } from "@fortawesome/free-brands-svg-icons/faGitAlt"
 import { faPython } from "@fortawesome/free-brands-svg-icons/faPython"
@@ -71,15 +70,7 @@ export default function Home() {
   }
 
   
-const skillCardVariants = {
-  hidden: { opacity: 0, y: 20, scale: 0.9 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-}
+
 
   return (
     <div className="bg-gray-50 text-gray-800 min-h-screen">
@@ -176,7 +167,7 @@ const skillCardVariants = {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
           >
-            {skills.map((skill, index) => (
+            {skills.map((skill) => (
               <motion.div
                 key={skill.name}
                 className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-lg  transition-all duration-300 hover:bg-muted/50 group"
