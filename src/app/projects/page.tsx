@@ -38,8 +38,7 @@ export default function ProjectsPage() {
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">My Projects</h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A collection of projects I've worked on, showcasing my skills in full-stack development, and
-              problem-solving.
+             {" A collection of projects I've worked on, showcasing my skills in full-stack development, and problem-solving."}
             </p>
           </div>
         </motion.div>

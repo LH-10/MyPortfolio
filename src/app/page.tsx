@@ -94,19 +94,18 @@ const skillCardVariants = {
         >
           <div className="md:col-span-5  p-4 items-center justify-center flex flex-col mx-auto">
             <motion.h1 className="text-5xl md:text-[52px] font-bold  text-black-800 mb-12 leading-tight" animate="active" variants={fadeInUp}>
-             Hi, I'm <span className="">
+             {"Hi, I'm"} <span className="">
 
-             Lalit Hinduja
+             {"Lalit Hinduja"}
              </span>
             </motion.h1>
            
             <motion.p className=" text-2xl text-gray-600 mb-12  md:text-center text-justify" variants={fadeInUp}>
-              I'm a
-              <motion.b>
+{"              I'm a"} 
+             <motion.b>
                  {" full-stack developer "}
                 </motion.b>
-                 continuously learning new technologies, I'm currently expanding into desktop app development to tackle more complex, cross-platform projects and deliver impactful solutions.
-              
+{"                 continuously learning new technologies, I'm currently expanding into desktop app development to tackle more complex, cross-platform projects and deliver impactful solutions."}              
             </motion.p>
             {/* <motion.p className="text-lg text-gray-600 mb-8 max-w-2xl text-justify" variants={fadeInUp}>
               {
@@ -158,8 +157,8 @@ const skillCardVariants = {
               }
             </motion.p>
             <motion.p className="text-xl text-gray-700 mb-4 max-w-7xl text-justify" variants={fadeInUp}>
-              My goal is to keep evolving as a developer and continue delivering applications that solve real-world problems in meaningful ways.
-               I’m passionate about pushing the boundaries of what I can build whether it's web, desktop, or beyond. I’m excited to take on projects that challenge me to grow and innovate.
+{     " My goal is to keep evolving as a developer and continue delivering applications that solve real-world problems in meaningful ways."}        
+      {" I’m passionate about pushing the boundaries of what I can build whether it's web, desktop, or beyond. I’m excited to take on projects that challenge me to grow and innovate. "}   
             </motion.p>
               </motion.div>
            <motion.div className="md:col-span-5 overflow-hidden">
@@ -196,7 +195,7 @@ const skillCardVariants = {
                     />
                   ) : (
                     <FontAwesomeIcon
-                    //@ts-ignore
+                    //@ts-expect-error non-issue
                       icon={skill.icon}
                       className={`text-3xl ${skill.color} group-hover:scale-110 transition-transform duration-300`}
                     />)}
