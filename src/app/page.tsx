@@ -12,6 +12,7 @@ import { faGitAlt } from "@fortawesome/free-brands-svg-icons/faGitAlt"
 import { faPython } from "@fortawesome/free-brands-svg-icons/faPython"
 import { faNodeJs } from "@fortawesome/free-brands-svg-icons/faNodeJs"
 import { faReact } from "@fortawesome/free-brands-svg-icons/faReact"
+import Head from "next/head"
 
 export default function Home() {
   const featuredProjects = PROJECTS.slice(0, 3)
@@ -73,6 +74,14 @@ export default function Home() {
 
 
   return (
+  <>
+        <Head>
+        <title>Lalit Hinduja | Portfolio</title>
+        <meta name="description" content="Lalit Hinduja is a full-stack web developer and designer. Explore projects, resume in my portfolio." />
+        <meta name="keywords" content="lalit hinduja,Lalit,Hinduja,portfolio, web developer, frontend developer, fullstack,lalit portfolio,etc." />
+        <meta name="author" content="Lalit Hinduja" />
+        <link rel="canonical" href="https://lalit-hinduja-portfolio.vercel.app/" />
+      </Head>
     <div className="bg-gray-50 text-gray-800 min-h-screen">
       <main className="container mx-auto px-6 py-12 md:py-20">
         <motion.section
@@ -82,7 +91,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-        >
+          >
           <div className="md:col-span-5  p-4 items-center justify-center flex flex-col mx-auto">
             <motion.h1 className="text-5xl md:text-[52px] font-bold  text-black-800 mb-12 leading-tight" animate="active" variants={fadeInUp}>
              {"Hi, I'm"} <span className="">
@@ -101,13 +110,13 @@ export default function Home() {
             {/* <motion.p className="text-lg text-gray-600 mb-8 max-w-2xl text-justify" variants={fadeInUp}>
               {
                 "Currently, I'm expanding my skill set to include desktop app development, aiming to diversify my expertise and take on more complex, cross-platform projects. My goal is to keep evolving as a developer and continue delivering applications that solve real problems in meaningful ways."
-              }
-            </motion.p> */}
+                }
+                </motion.p> */}
             <motion.div className="flex flex-wrap gap-4 my-5" variants={fadeInUp}>
               <a
                 href="#projects"
                 className="font-semibold px-5 py-3 text-center rounded-lg text-white transition-colors duration-300 bg-violet-600 hover:bg-violet-700"
-              >
+                >
                 <FontAwesomeIcon icon={faCode} className="text-md mx-1"/>
                 View My Work
               </a>
@@ -116,7 +125,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 text-center text-white hover:bg-gray-900 transition-colors duration-300 font-semibold px-5 py-3 rounded-lg"
-              >
+                >
             <FontAwesomeIcon icon={faGithub} className="text-xl mx-1" />
                 GitHub
               </a>
@@ -156,7 +165,7 @@ export default function Home() {
           <motion.h2
             className="text-4xl font-extrabold text-center text-foreground mb-12 tracking-tight"
             variants={fadeInUp}
-          >
+            >
             My Toolkit <FontAwesomeIcon icon={faTools} className="ml-2 text-gray-500" />
           </motion.h2>
 
@@ -166,29 +175,29 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-          >
+            >
             {skills.map((skill) => (
               <motion.div
-                key={skill.name}
-                className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-lg  transition-all duration-300 hover:bg-muted/50 group"
-                
-                whileHover={{ y: -5 }}
+              key={skill.name}
+              className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-lg  transition-all duration-300 hover:bg-muted/50 group"
+              
+              whileHover={{ y: -5 }}
               >
                 <div className="flex flex-col items-center space-y-2">
                   {skill.imageSrc ? (
                     <Image
-                      src={skill.imageSrc || "/placeholder.svg"}
-                      alt={skill.name}
-                      width={30}
-                      height={30}
-                      
-                      className="group-hover:scale-110 transition-transform duration-300"
+                    src={skill.imageSrc || "/placeholder.svg"}
+                    alt={skill.name}
+                    width={30}
+                    height={30}
+                    
+                    className="group-hover:scale-110 transition-transform duration-300"
                     />
                   ) : (
                     <FontAwesomeIcon
                     //@ts-expect-error non-issue
-                      icon={skill.icon}
-                      className={`text-3xl ${skill.color} group-hover:scale-110 transition-transform duration-300`}
+                    icon={skill.icon}
+                    className={`text-3xl ${skill.color} group-hover:scale-110 transition-transform duration-300`}
                     />)}
                   <h3 className="text-sm font-semibold text-card-foreground group-hover:text-primary transition-colors duration-300">
                     {skill.name}
@@ -206,17 +215,17 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-        >
+          >
           <motion.h2
             className="text-4xl font-extrabold text-center text-gray-900 mb-4 tracking-tight"
             variants={fadeInUp}
-          >
+            >
             My Work
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12 font-medium"
             variants={fadeInUp}
-          >
+            >
             Check out some of my recent work.
           </motion.p>
 
@@ -226,7 +235,7 @@ export default function Home() {
       <Link
         href={`/projects/${project.slug}`}
         className="relative bg-white rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 block"
-      >
+        >
         {/* Option 1: Aspect ratio container (recommended) */}
         <div className="relative overflow-hidden  aspect-video">
           <Image
@@ -238,7 +247,7 @@ export default function Home() {
             loading="lazy"
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-          />
+            />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-500"></div>
         </div>
 
@@ -254,8 +263,8 @@ export default function Home() {
           <div className="flex flex-wrap gap-2">
             {project.technologies.slice(0, 3).map((tech) => (
               <span
-                key={tech.name}
-                className={`bg-gray-50 text-xs font-semibold px-3 py-1 rounded-full shadow-sm transform hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-violet-600 hover:text-white`}
+              key={tech.name}
+              className={`bg-gray-50 text-xs font-semibold px-3 py-1 rounded-full shadow-sm transform hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-violet-600 hover:text-white`}
               >
                 {tech.name}
               </span>
@@ -276,7 +285,7 @@ export default function Home() {
             <Link
               href={LINKS.projects}
               className="inline-block font-semibold px-8 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-violet-600 hover:bg-violet-700"
-            >
+              >
               View All Projects
             </Link>
           </motion.div>
@@ -284,5 +293,6 @@ export default function Home() {
       </main>
       <Footer />
     </div>
+    </>
   )
 }
