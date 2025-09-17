@@ -1,4 +1,6 @@
 import { LINKS } from "@/misc/data"
+import { faGithub, faGithubSquare, faLinkedin, faLinkedinIn, faSquareLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export default function Footer() {
   return (
@@ -17,21 +19,22 @@ export default function Footer() {
 
         <div className="flex justify-center space-x-6 mt-8">
           <a
-            href={LINKS.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            GitHub
-          </a>
-          <a
-            href={LINKS.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            LinkedIn
-          </a>
+              href={LINKS.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+            >
+              <FontAwesomeIcon icon={faGithub} className="text-2xl" />
+            </a>
+            <a
+              href={LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+            >
+              <FontAwesomeIcon icon={faLinkedin} className="text-2xl bg-white text-blue-600" />
+            </a>
+            
       
         </div>
 

@@ -7,7 +7,7 @@ import tsLogo from "@/../public/typescript.svg"
 import { LINKS, PROJECTS } from "@/misc/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCss3Alt, faDocker, faGithub, faGolang, faHtml5, faJava } from "@fortawesome/free-brands-svg-icons"
-import { faArrowCircleRight, faCode, faToolbox } from "@fortawesome/free-solid-svg-icons"
+import { faArrowCircleRight, faCode, faToolbox, faTools } from "@fortawesome/free-solid-svg-icons"
 import { faJs } from "@fortawesome/free-brands-svg-icons/faJs"
 import { faGitAlt } from "@fortawesome/free-brands-svg-icons/faGitAlt"
 import { faPython } from "@fortawesome/free-brands-svg-icons/faPython"
@@ -22,9 +22,9 @@ export default function Home() {
   { name: "HTML", icon: faHtml5, color: "text-orange-600" },
   { name: "CSS", icon: faCss3Alt, color: "text-blue-600" },
   { name: "JavaScript", icon: faJs, color: "text-yellow-500" },
+  { name: "Go", imageSrc:"/go-gopher.svg", color: "text-blue-500" },
   { name: "Java", icon: faJava, color: "text-yellow-600" },
   { name: "Python", icon: faPython, color: "text-yellow-400" },
-  { name: "Go", imageSrc:"/go-gopher.svg", color: "text-blue-500" },
   { name: "React", icon: faReact, color: "text-cyan-500" },
   { name: "Node.js", icon: faNodeJs, color: "text-green-600" },
   { name: "Express.js", imageSrc:"/Express.svg", color: "text-green-600" },
@@ -167,7 +167,7 @@ const skillCardVariants = {
             className="text-4xl font-extrabold text-center text-foreground mb-12 tracking-tight"
             variants={fadeInUp}
           >
-            My Toolbox <FontAwesomeIcon icon={faToolbox} className="ml-2" />
+            My Toolkit <FontAwesomeIcon icon={faTools} className="ml-2 text-gray-500" />
           </motion.h2>
 
           <motion.div
@@ -231,53 +231,56 @@ const skillCardVariants = {
           </motion.p>
 
           <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" variants={staggerContainer}>
-            {featuredProjects.map((project) => (
-              <motion.div key={project.id} variants={animateRight}>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 block"
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={
-                        project.image ||
-                        "https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=" ||
-                        "/placeholder.svg"
-                      }
-                      alt={`Screenshot of ${project.title}`}
-                      width={600}
-                      height={400}
-                      className="h-60 w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-violet-600">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed" style={lineClampStyle}>
-                      {project.shortDescription}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech.name}
-                          className={`bg-gray-50 text-xs font-semibold px-3 py-1 rounded-full shadow-sm transform hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-violet-600 hover:text-white`}
-                        >
-                          {tech.name}
-                        </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <span className="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full shadow-sm hover:scale-110 hover:shadow-lg hover:bg-gray-200 transition-all duration-300 cursor-pointer">
-                          +{project.technologies.length - 3} more
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+  {featuredProjects.map((project) => (
+    <motion.div key={project.id} variants={animateRight}>
+      <Link
+        href={`/projects/${project.slug}`}
+        className="relative bg-white rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 block"
+      >
+        {/* Option 1: Aspect ratio container (recommended) */}
+        <div className="relative overflow-hidden  aspect-video">
+          <Image
+            src={project.image}
+            alt={`Screenshot of ${project.title}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-contain  transition-transform duration-500 ease-out bg-gray-50"
+            loading="lazy"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-500"></div>
+        </div>
+
+      
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-violet-600">
+            {project.title}
+          </h3>
+          <p className="text-gray-600 text-sm mb-4 leading-relaxed" style={lineClampStyle}>
+            {project.shortDescription}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.slice(0, 3).map((tech) => (
+              <span
+                key={tech.name}
+                className={`bg-gray-50 text-xs font-semibold px-3 py-1 rounded-full shadow-sm transform hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer hover:bg-violet-600 hover:text-white`}
+              >
+                {tech.name}
+              </span>
             ))}
-          </motion.div>
+            {project.technologies.length > 3 && (
+              <span className="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full shadow-sm hover:scale-110 hover:shadow-lg hover:bg-gray-200 transition-all duration-300 cursor-pointer">
+                +{project.technologies.length - 3} more
+              </span>
+            )}
+          </div>
+        </div>
+      </Link>
+    </motion.div>
+  ))}
+</motion.div>
 
           <motion.div className="text-center mt-12" variants={fadeInUp}>
             <Link

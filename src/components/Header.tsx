@@ -13,7 +13,7 @@ export default function Header() {
           <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-600 to-purple-600 group-hover:w-full transition-all duration-500 ease-out"></span>
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-16">
           <Link 
             href={LINKS.home} 
             className="text-gray-600 relative group px-2 py-1 transition-all duration-300 hover:text-gray-900"
@@ -21,14 +21,7 @@ export default function Header() {
             <span className="relative z-10">Home</span>
             <span className="absolute inset-0 bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out origin-center"></span>
           </Link>
-          <Link 
-            href={LINKS.about} 
-            className="text-gray-600 relative group px-2 py-1 transition-all duration-300 hover:text-gray-900"
-          >
-            <span className="relative z-10">About</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-violet-100 to-purple-100 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 ease-out origin-center"></span>
-          </Link>
-          <Link 
+                   <Link 
             href={LINKS.projects} 
             className="text-gray-600 relative group px-2 py-1 transition-all duration-300 hover:text-gray-900"
           >

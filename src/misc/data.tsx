@@ -3,7 +3,7 @@
 // Centralized links and data management
 export const LINKS = {
   // Personal Links
-  email: "lh@gmail.com",
+  email: "lalit1652h@gmail.com",
   github: "https://github.com/LH-10",
   linkedin: "https://www.linkedin.com/in/lalith10",
   resume: "https://drive.google.com/file/d/1PyxQKoxG51qAXGwU1mYNwCitD5EPMbUn/view",
@@ -28,8 +28,8 @@ export interface Project {
     color: string
   }>
   features: string[]
-  challenges: string[]
-  solutions: string[]
+  challenges?: string[]
+  solutions?: string[]
   liveUrl?: string
   githubUrl?: string
   category: "Web" | "Mobile" | "Desktop" | "API"
@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
       "A clean, minimal desktop Timer & Stopwatch app (inspired by Microsoft Clock). Built with Electron Forge (webpack) and React + Tailwind. ",
     fullDescription:
       "ItsTime is a sleek and minimal desktop application designed to manage timers and stopwatches. Inspired by Microsoft Clock, this app offers essential time-tracking functionality with modern features. Built using Electron Forge (webpack), React, and Tailwind CSS, ItsTime ensures a seamless user experience on both desktop and mobile. Timers persist locally in SQLite for reliable data storage, and the app offers text-to-speech notifications when timers finish. Perfect for anyone needing a simple yet powerful time management tool.",
-    image: "/placeholder.svg?height=400&width=600&text=Data+Visualization+Dashboard",
+    image: "/project-assets/project3.png",
     technologies: [
       { name: "Electron Js", color: "bg-orange-100 text-orange-800" },
       { name: "React", color: "bg-sky-100 text-sky-800" },
@@ -64,18 +64,6 @@ export const PROJECTS: Project[] = [
       "Uses contextBridge.exposeInMainWorld for secure communication between the renderer and main process, preventing direct access to ipcRenderer.",
       "Strongly typed with TypeScript, and uses Node ESM for a modern, modular approach in the main process.",
     ],
-    challenges: [
-      "Handling large datasets efficiently",
-      "Creating smooth animations and transitions",
-      "Implementing complex data filtering logic",
-      "Ensuring cross-browser compatibility",
-    ],
-    solutions: [
-      "Implemented data pagination and lazy loading",
-      "Used D3.js transitions for smooth animations",
-      "Built a flexible filtering system with multiple criteria",
-      "Thoroughly tested across different browsers and devices",
-    ],
     githubUrl: "https://github.com/LH-10/ItsTime-ElectronProject",
     category: "Desktop",
     status: "Completed",
@@ -92,12 +80,13 @@ export const PROJECTS: Project[] = [
         +"The frontend is built with React and Vite, offering a responsive and user-friendly interface. The application includes secure user authentication with Argon2id password hashing and JWT-based session handling. "+
       "Users can perform full CRUD operations on books, including adding, updating, viewing, and deleting entries. The system follows RESTful API principles and leverages environment variables for configuration management and security."+
       "\nThe project is containerized using Docker-compatible tools (Podman and Compose), enabling isolated services for the database and API. Environment variables are managed via .env files to support secure and flexible configuration."),
-    image: "/placeholder.svg?height=400&width=600&text=Task+Management+App",
+    image: "/project-assets/project2.1.png",
     technologies: [
       { name: "React", color: "bg-violet-100 text-violet-800" },
       { name: "MYSQL", color: "bg-red-100 text-red-800" },
-      { name: "GORM", color: "" },
       { name: "GO", color: "bg-grey-100 text-blue-800" },
+      { name: "Docker", color: "" },
+      { name: "GORM", color: "" },
     ],
     features: [
       "Secure signup and login using Argon2id password hashing and JWT for session management.",
@@ -107,18 +96,6 @@ export const PROJECTS: Project[] = [
       "Fully responsive design compatible with desktops, tablets, and mobile devices.",
       "Used GORM (ORM for Golang) to interact with the MySQL database through structured models.",
       "Containerized using Docker-compatible tools (Podman and Compose) for consistent, isolated development environments.",
-    ],
-    challenges: [
-      "Implementing smooth drag-and-drop interactions",
-      "Managing real-time data synchronization",
-      "Handling offline functionality",
-      "Optimizing performance with large task lists",
-    ],
-    solutions: [
-      "Used Vue Draggable for smooth drag-and-drop experience",
-      "Leveraged Firebase Firestore for real-time updates",
-      "Implemented service workers for offline capabilities",
-      "Used virtual scrolling for large datasets",
     ],
     githubUrl: "https://github.com/LH-10/Book-Management-System-in-Golang-/",
     category: "Web",
@@ -130,19 +107,19 @@ export const PROJECTS: Project[] = [
     slug: "hotel-room-booking-system",
     title: "Hotel Room Booking System",
     shortDescription:
-      "This is a hotel room booking system built using the technologies like React.js, Node.js, Express.js, Tailwind CSS and MySQL database. The project leverages modern web development technologies to create a seamless user and admin experience for booking and managing hotel rooms..",
+      "This is a hotel room booking system built using the technologies like React.js, Node.js, Express.js, Tailwind CSS and MySQL database. ",
     fullDescription:
       ("This Hotel Room Booking System is a full-stack web application designed to streamline the process of booking and managing hotel accommodations. It offers both customer-facing and administrative functionalities, ensuring a seamless experience for users and hotel staff alike."+
         "On the customer side, users can explore and choose from three distinct room categories, fill out a simple booking form, and instantly receive a confirmation email with their booking details. This ensures transparency and convenience throughout the reservation process."+
         "On the admin side, a secure dashboard provides hotel staff with powerful tools to manage room availability, update the status of bookings (such as marking them as paid or checked out), and add or remove rooms as needed. This enables efficient hotel operations and helps maintain up-to-date records."+
       ""),
-    image: "/placeholder.svg?height=400&width=600&text=E-commerce+Platform",
+    image: "/project-assets/project1.png",
     technologies: [
       { name: "React", color: "bg-violet-100 text-violet-800" },
       { name: "Tailwind CSS", color: "bg-violet-100 text-violet-800" },
+      { name: "Docker", color: "bg-emerald-100 text-emerald-800" },
       { name: "Node.js", color: "bg-green-100 text-green-800" },
       { name: "MySQL", color: "bg-emerald-100 text-emerald-800" },
-      { name: "Docker", color: "bg-emerald-100 text-emerald-800" },
       { name: "Express.js", color: "bg-gray-100 text-gray-800" },
     ],
     features: [
@@ -153,21 +130,9 @@ export const PROJECTS: Project[] = [
       "Admin can mark the checkout status of any customer.",
       "Admin can mark bookings as paid.",
       "Responsive design for all devices",
-      "Email notifications for orders",
+      "Email notifications for booking",
     ],
-    challenges: [
-      "Implementing secure payment processing",
-      "Managing complex state across the application",
-      "Optimizing performance for large product catalogs",
-      "Ensuring data consistency across multiple services",
-    ],
-    solutions: [
-      "Integrated Stripe for secure and reliable payment processing",
-      "Used Redux for predictable state management",
-      "Implemented pagination and lazy loading for better performance",
-      "Used database transactions to maintain data integrity",
-    ],
-    liveUrl: "https://ecommerce-demo.example.com",
+   
     githubUrl: "https://github.com/LH-10/Hotel_Room_Booking_System",
     category: "Web",
     status: "Completed",
