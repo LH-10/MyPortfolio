@@ -3,10 +3,40 @@ import { motion, Variants } from "framer-motion"
 import Footer from "@/components/Footer"
 import Image from "next/image"
 import Link from "next/link"
+import tsLogo from "@/../public/typescript.svg"
 import { LINKS, PROJECTS } from "@/misc/data"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCss3Alt, faDocker, faGithub, faGolang, faHtml5, faJava } from "@fortawesome/free-brands-svg-icons"
+import { faArrowCircleRight, faCode, faToolbox } from "@fortawesome/free-solid-svg-icons"
+import { faJs } from "@fortawesome/free-brands-svg-icons/faJs"
+import { faGitAlt } from "@fortawesome/free-brands-svg-icons/faGitAlt"
+import { faPython } from "@fortawesome/free-brands-svg-icons/faPython"
+import { faNodeJs } from "@fortawesome/free-brands-svg-icons/faNodeJs"
+import { faReact } from "@fortawesome/free-brands-svg-icons/faReact"
 
 export default function Home() {
   const featuredProjects = PROJECTS.slice(0, 3)
+
+
+  const skills = [
+  { name: "HTML", icon: faHtml5, color: "text-orange-600" },
+  { name: "CSS", icon: faCss3Alt, color: "text-blue-600" },
+  { name: "JavaScript", icon: faJs, color: "text-yellow-500" },
+  { name: "Java", icon: faJava, color: "text-yellow-600" },
+  { name: "Python", icon: faPython, color: "text-yellow-400" },
+  { name: "Go", imageSrc:"/go-gopher.svg", color: "text-blue-500" },
+  { name: "React", icon: faReact, color: "text-cyan-500" },
+  { name: "Node.js", icon: faNodeJs, color: "text-green-600" },
+  { name: "Express.js", imageSrc:"/Express.svg", color: "text-green-600" },
+  { name: "Git", icon: faGitAlt, color: "text-orange-500" },
+  { name: "TypeScript", imageSrc:"/typescript.svg", color: "text-blue-700" },
+  { name: "MongoDB", imageSrc: "/mongodb.svg", color: "text-green-700" },
+  { name: "MySQL", imageSrc: "/mysql1.svg", color: "text-green-700" },
+  { name: "Electron", imageSrc:"/electron.svg", color: "text-cyan-500" },
+  { name: "Github", icon: faGithub, color: "text-black" },
+  { name: "Docker", icon: faDocker, color: "text-blue-600" },
+
+]
 
   const lineClampStyle = {
     overflow: "hidden",
@@ -25,7 +55,7 @@ export default function Home() {
     },
   }
 
-  const variantsRight = {
+  const animateRight = {
     hidden: { opacity: 0, x: 100 }, 
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
   };
@@ -40,6 +70,17 @@ export default function Home() {
     },
   }
 
+  
+const skillCardVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+}
+
   return (
     <div className="bg-gray-50 text-gray-800 min-h-screen">
       <main className="container mx-auto px-6 py-12 md:py-20">
@@ -51,48 +92,126 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <div className="md:col-span-5  p-2 items-center justify-center flex flex-col mx-auto">
-            <motion.h1 className="text-4xl md:text-5xl font-bold  text-black-800 mb-4 leading-tight" animate="active" variants={fadeInUp}>
+          <div className="md:col-span-5  p-4 items-center justify-center flex flex-col mx-auto">
+            <motion.h1 className="text-5xl md:text-[52px] font-bold  text-black-800 mb-12 leading-tight" animate="active" variants={fadeInUp}>
              Hi, I'm <span className="">
 
              Lalit Hinduja
              </span>
             </motion.h1>
-            <motion.h1 className="text-4xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight" variants={fadeInUp}>
-              Full-Stack Developer
-            </motion.h1>
-            <motion.p className="text-lg text-gray-600 mb-8 max-w-2xl text-justify" variants={fadeInUp}>
-              {
-                "I'm a full-stack developer with a focus on building efficient and maintainable web applications. I'm constantly learning and experimenting with new technologies to ensure the solutions I build are both efficient and effective."
-              }
+           
+            <motion.p className=" text-2xl text-gray-600 mb-12  md:text-center text-justify" variants={fadeInUp}>
+              I'm a
+              <motion.b>
+                 {" full-stack developer "}
+                </motion.b>
+                 continuously learning new technologies, I'm currently expanding into desktop app development to tackle more complex, cross-platform projects and deliver impactful solutions.
+              
             </motion.p>
-            <motion.p className="text-lg text-gray-600 mb-8 max-w-2xl text-justify" variants={fadeInUp}>
+            {/* <motion.p className="text-lg text-gray-600 mb-8 max-w-2xl text-justify" variants={fadeInUp}>
               {
                 "Currently, I'm expanding my skill set to include desktop app development, aiming to diversify my expertise and take on more complex, cross-platform projects. My goal is to keep evolving as a developer and continue delivering applications that solve real problems in meaningful ways."
               }
-            </motion.p>
-            <motion.div className="flex flex-wrap gap-4" variants={fadeInUp}>
+            </motion.p> */}
+            <motion.div className="flex flex-wrap gap-4 my-5" variants={fadeInUp}>
               <a
                 href="#projects"
-                className="font-semibold px-6 py-3 rounded-lg text-white transition-colors duration-300 bg-violet-600 hover:bg-violet-700"
+                className="font-semibold px-5 py-3 text-center rounded-lg text-white transition-colors duration-300 bg-violet-600 hover:bg-violet-700"
               >
+                <FontAwesomeIcon icon={faCode} className="text-md mx-1"/>
                 View My Work
               </a>
               <a
                 href={LINKS.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-800 text-white hover:bg-gray-900 transition-colors duration-300 font-semibold px-6 py-3 rounded-lg"
+                className="bg-gray-800 text-center text-white hover:bg-gray-900 transition-colors duration-300 font-semibold px-5 py-3 rounded-lg"
               >
+            <FontAwesomeIcon icon={faGithub} className="text-xl mx-1" />
                 GitHub
               </a>
             </motion.div>
           </div>
+           
         </motion.section>
+        <motion.section
+          id="about"
+          className="grid md:grid-cols-5  gap-12 items-center mb-24 md:mb-32"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp} >
+            <motion.div className="md:col-span-5  p-2 items-center  justify-center flex flex-col mx-auto">
+            <motion.h1 className="text-4xl font-bold my-12">About Me</motion.h1>
+          
+            
+            <motion.p className="text-xl text-gray-700 mb-4 max-w-7xl text-justify" variants={fadeInUp}>
+              {
+                "I’m a full-stack developer with a focus on building efficient and maintainable web applications. I thrive on turning ideas into scalable solutions by making use modern frameworks , tools and programming languages  . With experience in building intuitive user experience and robust backend systems, "+
+                "I aim to deliver applications that not only perform well but also provide a seamless user experience."
+              }
+            </motion.p>
+            <motion.p className="text-xl text-gray-700 mb-4 max-w-7xl text-justify " variants={fadeInUp}>
+              {
+                "Currently, I’m expanding my skill set to include desktop app development, aiming to diversify my expertise and take on more complex, cross-platform projects."+
+                " My recent work with Electron.js, SQLite, and TypeScript has allowed me to explore building desktop applications with modular and secure structures, further strengthening my ability to deliver versatile solutions."
+              }
+            </motion.p>
+            <motion.p className="text-xl text-gray-700 mb-4 max-w-7xl text-justify" variants={fadeInUp}>
+              My goal is to keep evolving as a developer and continue delivering applications that solve real-world problems in meaningful ways.
+               I’m passionate about pushing the boundaries of what I can build whether it's web, desktop, or beyond. I’m excited to take on projects that challenge me to grow and innovate.
+            </motion.p>
+              </motion.div>
+           <motion.div className="md:col-span-5 overflow-hidden">
+          <motion.h2
+            className="text-4xl font-extrabold text-center text-foreground mb-12 tracking-tight"
+            variants={fadeInUp}
+          >
+            My Toolbox <FontAwesomeIcon icon={faToolbox} className="ml-2" />
+          </motion.h2>
 
+          <motion.div
+            className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 max-w-7xl mx-auto"
+            variants={animateRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                className="bg-card border border-border rounded-lg p-4 text-center hover:shadow-lg  transition-all duration-300 hover:bg-muted/50 group"
+                
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex flex-col items-center space-y-2">
+                  {skill.imageSrc ? (
+                    <Image
+                      src={skill.imageSrc || "/placeholder.svg"}
+                      alt={skill.name}
+                      width={30}
+                      height={30}
+                      
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  ) : (
+                    <FontAwesomeIcon
+                    //@ts-ignore
+                      icon={skill.icon}
+                      className={`text-3xl ${skill.color} group-hover:scale-110 transition-transform duration-300`}
+                    />)}
+                  <h3 className="text-sm font-semibold text-card-foreground group-hover:text-primary transition-colors duration-300">
+                    {skill.name}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+        </motion.section>
         <motion.section
           id="projects"
-          className="mb-24 md:mb-32"
+          className="mb-24 md:mb-32 overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -113,7 +232,7 @@ export default function Home() {
 
           <motion.div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" variants={staggerContainer}>
             {featuredProjects.map((project) => (
-              <motion.div key={project.id} variants={variantsRight}>
+              <motion.div key={project.id} variants={animateRight}>
                 <Link
                   href={`/projects/${project.slug}`}
                   className="relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 block"

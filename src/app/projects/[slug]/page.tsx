@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getProjectBySlug, PROJECTS } from "@/misc/data"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 interface ProjectPageProps {
   params: {
@@ -66,10 +68,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               priority
             />
             <div className="p-8">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+              <div className="flex flex-col md:flex-row md:items-center  gap-5 md:justify-between mb-6">
                 <div>
-                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{project.title}</h1>
-                  <p className="text-lg text-gray-600">{project.shortDescription}</p>
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-900  mb-2">{project.title}</h1>
+                  <p className="text-lg text-gray-600 text-justify">{project.shortDescription}</p>
                 </div>
                 <div className="flex space-x-4 mt-4 md:mt-0">
                   {project.liveUrl && (
@@ -87,9 +89,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gray-800 text-white hover:bg-gray-900 transition-colors duration-300 font-semibold px-6 py-3 rounded-lg"
+                      className="bg-gray-800 text-white text-end min-w-40  flex justify-center items-center gap-2  text-md hover:bg-gray-900 transition-colors duration-300 font-semibold px-5 py-3 rounded-lg"
                     >
-                      View Code
+                      <span>
+                        
+                        <FontAwesomeIcon icon={faGithub} className="text-md "/>
+                        </span>
+                        View Code
                     </a>
                   )}
                 </div>
