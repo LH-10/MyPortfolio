@@ -21,15 +21,16 @@ export default function Home() {
   const skills = [
   { name: "HTML", icon: faHtml5, color: "text-orange-600" },
   { name: "CSS", icon: faCss3Alt, color: "text-blue-600" },
-  { name: "JavaScript", icon: faJs, color: "text-yellow-500" },
+  { name: "JavaScript", icon: faJs, color: "text-yellow-400" },
   { name: "Go", imageSrc:"/go-gopher.svg", color: "text-blue-500" },
   { name: "Java", icon: faJava, color: "text-yellow-600" },
   { name: "Python", icon: faPython, color: "text-yellow-400" },
+  { name: "TypeScript", imageSrc:"/typescript.svg", color: "text-blue-700" },
   { name: "React", icon: faReact, color: "text-cyan-500" },
   { name: "Node.js", icon: faNodeJs, color: "text-green-600" },
   { name: "Express.js", imageSrc:"/Express.svg", color: "text-green-600" },
+  { name: "Tailwind", imageSrc:"/tailwindcss.svg", color: "text-green-600 my-2" },
   { name: "Git", icon: faGitAlt, color: "text-orange-500" },
-  { name: "TypeScript", imageSrc:"/typescript.svg", color: "text-blue-700" },
   { name: "MongoDB", imageSrc: "/mongodb.svg", color: "text-green-700" },
   { name: "MySQL", imageSrc: "/mysql1.svg", color: "text-green-700" },
   { name: "Electron", imageSrc:"/electron.svg", color: "text-cyan-500" },
@@ -77,8 +78,8 @@ export default function Home() {
   <>
         <Head>
         <title>Lalit Hinduja | Portfolio</title>
-        <meta name="description" content="Lalit Hinduja is a full-stack web developer and designer. Explore projects, resume in my portfolio." />
-        <meta name="keywords" content="lalit hinduja,Lalit,Hinduja,portfolio, web developer, frontend developer, fullstack,lalit portfolio,etc." />
+        <meta name="description" content="Lalit Hinduja is a full-stack web developer I'm currently expanding into desktop app devlopment . Explore projects, resume in my portfolio." />
+        <meta name="keywords" content="lalit hinduja,Lalit,Hinduja,portfolio, web developer, frontend developer, fullstack,lalit portfolio," />
         <meta name="author" content="Lalit Hinduja" />
         <link rel="canonical" href="https://lalit-hinduja-portfolio.vercel.app/" />
       </Head>
@@ -93,12 +94,12 @@ export default function Home() {
           variants={fadeInUp}
           >
           <div className="md:col-span-5  p-4 items-center justify-center flex flex-col mx-auto">
-            <motion.h1 className="text-5xl md:text-[52px] font-bold  text-black-800 mb-12 leading-tight" animate="active" variants={fadeInUp}>
+            <motion.h2 className="text-5xl md:text-[52px] font-bold  text-black-800 mb-12 leading-tight" animate="active" variants={fadeInUp}>
              {"Hi, I'm"} <span className="">
 
              {"Lalit Hinduja"}
              </span>
-            </motion.h1>
+            </motion.h2>
            
             <motion.p className=" text-2xl text-gray-600 mb-12  md:text-center text-justify" variants={fadeInUp}>
 {"              I'm a"} 
@@ -141,7 +142,7 @@ export default function Home() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp} >
             <motion.div className="md:col-span-5  p-2 items-center  justify-center flex flex-col mx-auto">
-            <motion.h1 className="text-4xl font-bold my-12">About Me</motion.h1>
+            <motion.h2 className="text-4xl font-bold my-12">About Me</motion.h2>
           
             
             <motion.p className="text-xl text-gray-700 mb-4 max-w-7xl text-justify" variants={fadeInUp}>
@@ -191,7 +192,7 @@ export default function Home() {
                     width={30}
                     height={30}
                     
-                    className="group-hover:scale-110 transition-transform duration-300"
+                    className={`${skill.color} group-hover:scale-110 transition-transform duration-300`}
                     />
                   ) : (
                     <FontAwesomeIcon

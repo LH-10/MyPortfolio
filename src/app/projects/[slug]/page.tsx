@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { getProjectBySlug, PROJECTS } from "@/misc/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import Footer from "@/components/Footer"
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>
@@ -40,6 +41,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   }
 
   return (
+    <>
     <div className="bg-gray-50 min-h-screen">
 
       <main className="container mx-auto px-6 py-10">
@@ -157,7 +159,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </Link>
           </div>
       </main>
-
+              
     </div>
+    <Footer/>
+    </>
   )
 }
