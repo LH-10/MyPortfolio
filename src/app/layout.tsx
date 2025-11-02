@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lalit Hinduja Portfolio",
   description: "Hey I'm Lalit Hinduja  a full-stack web developer , I'm currently expanding into desktop app devlopment . Explore projects, resume in my portfolio.",
-  keywords:"lalit hinduja,Lalit,Hinduja,portfolio,LH-10,web developer, frontend developer, fullstack,lalit portfolio ,Golang dev, GO",
+  keywords:"lalit hinduja,Lalit,Hinduja,portfolio,LH-10,web developer, frontend , fullstack,lalit portfolio ,Golang dev, GO , javascript , developer, desktop, app developer",
   authors:{name:"Lalit Hinduja"}
 };
 

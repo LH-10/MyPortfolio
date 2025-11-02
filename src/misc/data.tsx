@@ -41,7 +41,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
    {
     id: "1",
-    slug: "electron-timer-project",
+    slug: "its-time",
     title: "Its Time (Electron Project)",
     shortDescription:
       "A clean, minimal desktop Timer & Stopwatch app (inspired by Microsoft Clock). Built with Electron Forge (webpack) and React + Tailwind. ",
