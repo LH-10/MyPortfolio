@@ -4,6 +4,7 @@ import { getProjectBySlug, PROJECTS } from "@/misc/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Footer from "@/components/Footer"
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons"
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>
@@ -89,6 +90,20 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                         View Code
                     </a>
                   )}
+                  {project.Installer && (
+                    <a
+                      href={project.Installer}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-blue-500 text-white text-end min-w-40  flex justify-center items-center gap-2 text-ce text-md hover:bg-blue-600 transition-colors duration-300 font-semibold px-5 py-3 rounded-lg"
+                    >
+                      <span>
+                        
+                        <FontAwesomeIcon icon={faFileDownload} className="text-md "/>
+                        </span>
+                        Download 
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -102,14 +117,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Project status */}
-              <div className="grid md:grid-cols-1 gap-2 text-sm text-gray-600">
-                <div>
-                  <span className="font-semibold">Category:</span> {project.category}
+              <div className="grid md:grid-cols-1 gap-4 text-sm  text-gray-600">
+                <div >
+                  <span className="rounded-lg px-4 py-2 shadow-md m-0 font-semibold">Category:<span className="font-bold text-blue-500"> {project.category}</span></span>
                 </div>
-                <div>
-                  <span className="font-semibold">Status:</span> {project.status.replace("-", " ")}
+                <div >
+                  <span className="rounded-lg px-4 py-2  shadow-md m-0 font-semibold">Status: <span className={`font-bold ${project.status!="Completed"?"text-yellow-500":"text-green-500"}`}> {project.status.replace("-", " ")}</span></span>
                 </div>
              
+              </div>
+              <div className="bg-white rounded-xl mt-8">
+                <h2 className="text-2xl font-bold text-violet-500 mb-4">Project Overview</h2>
+                <p className="text-gray-600 leading-relaxed text-justify">{project.fullDescription}</p>
               </div>
             </div>
         
@@ -117,13 +136,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Project Details */}
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-4 ">
-              <div className="bg-white rounded-xl shadow-md px-8 pb-4 ">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Project Overview</h2>
-                <p className="text-gray-600 leading-relaxed text-justify">{project.fullDescription}</p>
-              </div>
 
-              <div className="bg-white rounded-xl shadow-md p-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Key Features</h2>
+              <div className="bg-white rounded-xl  px-8 pb-8 pt-2">
+                <h2 className="text-2xl font-bold text-violet-500 mb-4">Key Features</h2>
                 <ul className="space-y-2">
                   {project.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
