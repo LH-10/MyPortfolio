@@ -235,7 +235,7 @@ export default function Home() {
     <motion.div key={project.id} variants={animateRight}>
       <Link
         href={`/projects/${project.slug}`}
-        className="relative bg-white rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 block"
+        className="relative bg-white lg:min-h-full rounded-2xl  shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group border border-gray-100 block"
         >
         {/* Option 1: Aspect ratio container (recommended) */}
         <div className="relative overflow-hidden  aspect-video">

@@ -66,7 +66,7 @@ export const PROJECTS: Project[] = [
       "Strongly typed with TypeScript, and uses Node ESM for a modern, modular approach in the main process.",
     ],
     githubUrl: "https://github.com/LH-10/ItsTime-ElectronProject",
-    Installer:"https://www.dropbox.com/scl/fo/1xivcnjs2hthqoxzkb4cj/AHclfj1Fazitk_-QtR1BMyw?rlkey=umfpeisswopzv1c89aj0ykqd8&st=017q3cnq&dl=1",
+    Installer:"https://www.dropbox.com/scl/fo/t2vmbyxq2anpqm6lpqnsx/AFFe62rtccCGo9hAMwGjUmc?rlkey=nk3z9fo0md8jwi292yjhmzex1&st=87knjdz5&dl=0",
     category: "Desktop",
     status:"Completed",
   
