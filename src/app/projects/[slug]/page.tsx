@@ -59,13 +59,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         {/* Project Header */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden mb-8">
             
-            <div className="p-8">
+            <div className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:items-center  gap-5 md:justify-between mb-6">
                 <div>
                   <h1 className="text-3xl md:text-4xl font-bold text-gray-900  mb-2">{project.title}</h1>
                   <p className="text-lg text-gray-600 text-justify">{project.shortDescription}</p>
                 </div>
-                <div className="flex space-x-4 mt-4 md:mt-0">
+                <div className="flex  flex-col gap-y-2 md:flex-row md:space-x-4 mt-4 md:mt-0">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
