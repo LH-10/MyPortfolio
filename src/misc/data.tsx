@@ -6,7 +6,7 @@ export const LINKS = {
   email: "lalit1652h@gmail.com",
   github: "https://github.com/LH-10",
   linkedin: "https://www.linkedin.com/in/lalith10",
-  resume: "https://drive.google.com/file/d/1PyxQKoxG51qAXGwU1mYNwCitD5EPMbUn/view",
+  resume: "https://drive.google.com/file/d/1DcS0werpzjn2d018BXx4Tfkk0WY7B9za/view",
 
   // Navigation
   home: "/",
