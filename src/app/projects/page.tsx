@@ -73,7 +73,7 @@ export default function ProjectsPage() {
                       className={`px-2 py-1 text-xs font-medium rounded-full ${
                         project.status === "Completed"
                           ? "bg-green-100 text-green-800"
-                          : project.status === "in-progress"
+                          : project.status === "Ongoing"
                             ? "bg-yellow-100 text-yellow-800"
                             : "bg-gray-100 text-gray-800"
                       }`}

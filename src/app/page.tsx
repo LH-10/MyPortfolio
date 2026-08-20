@@ -35,6 +35,8 @@ export default function Home() {
   { name: "MySQL", imageSrc: "/mysql1.svg", color: "text-green-700" },
   { name: "Electron", imageSrc:"/electron.svg", color: "text-cyan-500" },
   { name: "Github", icon: faGithub, color: "text-black" },
+  { name: "WebSockets", imageSrc: "/websocket.svg", color: "text-blue-600" },
+  { name: "WebRTC", imageSrc:"/webrtc.svg", color: "text-blue-600" },
   { name: "Docker", icon: faDocker, color: "text-blue-600" },
 
 ]

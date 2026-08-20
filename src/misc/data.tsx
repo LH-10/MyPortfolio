@@ -33,20 +33,49 @@ export interface Project {
   liveUrl?: string
   Installer?:string
   githubUrl?: string
-  category: "Web" | "Mobile" | "Desktop" | "API"
-  status: "Completed" | "in-progress" | "planned" | "ongoing"
+  category: "Web" | "Mobile" | "Desktop" | "API" | "CLI"
+  status: "Completed" | "in-progress" | "planned" | "Ongoing"
  
 }
 
 export const PROJECTS: Project[] = [
    {
     id: "1",
+    slug: "termbuzz",
+    title: "TermBuzz",
+    shortDescription:
+      "Terminal app that allows you to make calls within the terminal . ",
+    fullDescription:
+      "TermBuzz is  minimal call application that allows you to make calls without having GUI . It uses the WebRTC protocol to achieve connectivity between two people , works accross different networks. Built entirely in Go(golang) with official pion webrtc library .",
+    image: "/project-assets/CLI_placeholder.png",
+    technologies: [
+      { name: "GO", color: "bg-orange-100 text-orange-800" },
+      { name: "WebRTC", color: "bg-sky-100 text-sky-800" },
+      { name: "Websocket", color: "bg-pink-100 text-pink-800" },
+      { name: "Pion", color: "bg-gray-100 text-blue-800" },
+      { name: "Opus codec", color: "bg-grey-100 text-blue-800" },
+    ],
+    features: [
+      "Features live audio call between peers",
+      "Pure Go implementation no Cgo calls",
+      "Allows connection between different network , uses STUN to acquire candidates for determining path RTP packets .",
+      "Uses fast websocket server for Signaling(i.e. to exchange SDP). Code for Signaling Server is available in the same repo",
+      "Works accross different desktop platform(Mac,Linux,Windows,etc.) , Go code can be compiled for any operating system.",
+      "TURN implementation and testing will be done in next version",
+    ],
+    githubUrl: "https://github.com/LH-10/TermBuzz",
+    category: "CLI",
+    status:"Ongoing",
+  
+  },
+   {
+    id: "2",
     slug: "its-time",
     title: "Its Time (Electron Project)",
     shortDescription:
       "A clean, minimal desktop Timer & Stopwatch app (inspired by Microsoft Clock). Built with Electron Forge (webpack) and React + Tailwind. ",
     fullDescription:
-      "ItsTime is a sleek and minimal desktop application designed to manage timers and stopwatches. Inspired by Microsoft Clock, this app offers essential time-tracking functionality with modern features. Built using Electron Forge (webpack), React, and Tailwind CSS, ItsTime ensures a seamless user experience on both desktop and mobile. Timers persist locally in SQLite for reliable data storage, and the app offers text-to-speech notifications when timers finish. Perfect for anyone needing a simple yet powerful time management tool.",
+      "ItsTime is a sleek and minimal desktop application designed to manage timers and stopwatches. Inspired by Microsoft Clock, this app offers essential time-tracking functionality with modern features. Built using Electron Forge (webpack), React, and Tailwind CSS, ItsTime ensures a seamless user experience on both desktop . Timers persist locally in SQLite for reliable data storage, and the app offers text-to-speech notifications when timers finish. Perfect for anyone needing a simple yet powerful time management tool.",
     image: "/project-assets/project3.png",
     technologies: [
       { name: "Electron Js", color: "bg-orange-100 text-orange-800" },
@@ -72,7 +101,7 @@ export const PROJECTS: Project[] = [
   
   },
   {
-    id: "2",
+    id: "3",
     slug: "bookstore-management-app",
     title: "Book Store Management App",
     shortDescription:
@@ -105,7 +134,7 @@ export const PROJECTS: Project[] = [
   
   },
   
-   {id: "3",
+   {id: "4",
     slug: "hotel-room-booking-system",
     title: "Hotel Room Booking System",
     shortDescription:
