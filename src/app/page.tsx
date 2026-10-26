@@ -5,14 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { LINKS, PROJECTS } from "@/misc/data"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faDocker, faGithub, faHtml5, faJava } from "@fortawesome/free-brands-svg-icons"
-import { faCode, faTools } from "@fortawesome/free-solid-svg-icons"
+import { faCss3Alt, faDocker, faGithub, faHackerrank, faHtml5, faJava} from "@fortawesome/free-brands-svg-icons"
+import { faCode, faLeaf, faPersonBreastfeeding, faTools } from "@fortawesome/free-solid-svg-icons"
 import { faJs } from "@fortawesome/free-brands-svg-icons/faJs"
 import { faGitAlt } from "@fortawesome/free-brands-svg-icons/faGitAlt"
 import { faPython } from "@fortawesome/free-brands-svg-icons/faPython"
 import { faNodeJs } from "@fortawesome/free-brands-svg-icons/faNodeJs"
 import { faReact } from "@fortawesome/free-brands-svg-icons/faReact"
 import Head from "next/head"
+import { faL } from "@fortawesome/free-solid-svg-icons/faL"
 
 export default function Home() {
   const featuredProjects = PROJECTS.slice(0, 3)
@@ -131,6 +132,15 @@ export default function Home() {
                 >
             <FontAwesomeIcon icon={faGithub} className="text-xl mx-1" />
                 GitHub
+              </a>
+              <a
+                href={LINKS.leetcode}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-yellow-500 text-center text-white hover:bg-orange-500 transition-colors duration-300 font-semibold px-5 py-3 rounded-lg"
+                >
+            <FontAwesomeIcon icon={faL} className="text-xl mx-1" />
+                LeetCode
               </a>
             </motion.div>
           </div>
