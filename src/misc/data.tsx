@@ -170,6 +170,30 @@ export const PROJECTS: Project[] = [
     category: "Web",
     status: "Completed",
 
+  },{
+   id: "5",
+   slug: "unix_shell",
+   title: "LH-Shell",
+   shortDescription:
+     "A unix shell ",
+   fullDescription:
+     "LHShell is a simple Unix shell written in C for Linux. It was built to understand how shells work and how processes are created and executed in Unix systems.",
+   image: "/lhshell2.png",
+   technologies: [
+     { name: "C", color: "bg-orange-100 text-orange-800" },
+     { name: "Makefile", color: "bg-orange-100 text-orange-800" },
+   ],
+   features: [
+     "Run commands using the fork() + exec() model",
+     "Supports cd for switching directories",
+     "Shows the current working directory after changing directories.",
+     "Supports colored output in terminal",
+     "Built Primarily for Unix based systems",
+   ],
+   githubUrl: "https://github.com/LH-10/lhshell",
+   category: "CLI",
+   status:"Completed",
+  
   },
 ]
 
